@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="简单、专注的个人习惯打卡工具" />
+    <title>每日习惯打卡</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="./">
+          <span class="brand-mark">✓</span>
+          <span>习惯清单</span>
+        </a>
+        <span class="today-label" id="todayLabel"></span>
+      </header>
+
+      <section class="hero">
+        <div>
+          <p class="eyebrow">SMALL STEPS, EVERY DAY</p>
+          <h1>今天也要成为<br /><span>更好的自己</span></h1>
+          <p class="hero-copy">坚持不必很难，从完成一个小习惯开始。</p>
+        </div>
+        <div class="progress-card">
+          <div class="progress-ring" id="progressRing">
+            <strong id="progressValue">0%</strong>
+          </div>
+          <div>
+            <span class="progress-label">今日进度</span>
+            <strong id="progressText">0 / 0 已完成</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-grid">
+        <div class="habits-panel panel">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">TODAY</p>
+              <h2>今日习惯</h2>
+            </div>
+            <button class="add-button" id="openAddButton" type="button">
+              <span>＋</span> 新增习惯
+            </button>
+          </div>
+          <div class="habit-list" id="habitList"></div>
+          <div class="empty-state hidden" id="emptyState">
+            <span class="empty-icon">✦</span>
+            <p>还没有习惯，添加一个开始吧</p>
+          </div>
+        </div>
+
+        <aside class="calendar-panel panel">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">HISTORY</p>
+              <h2 id="calendarTitle"></h2>
+            </div>
+            <div class="calendar-nav">
+              <button type="button" id="previousMonth" aria-label="上个月">‹</button>
+              <button type="button" id="nextMonth" aria-label="下个月">›</button>
+            </div>
+          </div>
+          <div class="calendar-weekdays">
+            <span>日</span><span>一</span><span>二</span><span>三</span>
+            <span>四</span><span>五</span><span>六</span>
+          </div>
+          <div class="calendar-days" id="calendarDays"></div>
+          <div class="calendar-legend">
+            <span><i class="legend-dot completed"></i>完成</span>
+            <span><i class="legend-dot today"></i>今天</span>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <dialog class="add-dialog" id="addDialog">
+      <form method="dialog" id="habitForm">
+        <button class="close-button" id="closeDialog" type="button" aria-label="关闭">×</button>
+        <p class="section-kicker">NEW HABIT</p>
+        <h2>添加一个新习惯</h2>
+        <label for="habitName">习惯名称</label>
+        <input
+          id="habitName"
+          name="habitName"
+          type="text"
+          maxlength="20"
+          placeholder="例如：早起、喝水、写日记"
+          autocomplete="off"
+          required
+        />
+        <p class="input-hint">给自己一个简单、明确的目标</p>
+        <button class="submit-button" type="submit">添加习惯</button>
+      </form>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>

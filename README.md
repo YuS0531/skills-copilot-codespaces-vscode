@@ -1,2 +1,17 @@
-# skills-copilot-codespaces-vscode
-My clone repository
+# 习惯清单
+
+一个简单的个人习惯打卡小程序，使用原生 HTML、CSS 和 JavaScript 实现。
+
+## 当前功能
+
+- 预置阅读、运动、背单词三个习惯
+- 新增习惯
+- 每日完成 / 取消打卡
+- 显示今日完成进度和连续打卡天数
+- 查看按月展示的打卡记录
+
+## 本地运行
+
+直接用浏览器打开 `index.html` 即可运行，也可以使用 VS Code 的 Live Server 预览。
+
+当前版本暂未接入 `localStorage`，刷新页面后数据会恢复为初始状态。
